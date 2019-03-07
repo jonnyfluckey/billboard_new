@@ -1,0 +1,21 @@
+<h1><%= @billboard.chart_name %></h1>
+<br>
+<br>
+<hr>
+<table class="ui celled table">
+    <thead class='center aligned'>
+      <th>Rank</th>
+      <th>Song</th>
+      <th>Artist</th>
+    </tr>
+    </thead>
+    <tbody>
+      <% @ranks.each do |billboard| %>
+      <tr class='center aligned'>
+        <td><%= billboard.rank %></td>
+        <td><%= billboard.song.title %></td>
+        <td><%= billboard.song.artist.name %>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>

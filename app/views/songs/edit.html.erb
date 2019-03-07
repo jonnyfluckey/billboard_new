@@ -1,0 +1,13 @@
+<h1>Edit Song</h1>
+<br>
+<br>
+<hr>
+<%= form_with(model: [@artist, @song], local: true, class: 'ui form') do |f| %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title, required: true, autofocus: true, placeholder: @song %>
+    <% f.label :artist_id %>
+    <% f.text_field :artist_id, required: true, value: @artist.id %>
+  </div>
+  <%= f.submit nil, class: 'ui green button inverted' %>
+<% end %>

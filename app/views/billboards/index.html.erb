@@ -1,0 +1,11 @@
+<h1>Welcome to the Billboard Charts!</h1>
+<br>
+<br>
+<hr>
+<h3>Select a Billboard Chart</h3>
+
+<ul>
+<% @billboards.each do |i| %>
+  <li><%= link_to i.chart_name, billboard_path(i) %></li>
+<% end %>
+</ul>
