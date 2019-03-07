@@ -21,9 +21,9 @@ class SongsController < ApplicationController
     @song = @artist.songs.new(song_params)
 
     if @song.save
-      redirect_to artist_path(@artist), notice: "Song was created sucessfully"
+      redirect_to artist_path(@artist)
     else
-      render :new, notice: "Your song could not be created"
+      render :new
     end
 
   end
@@ -31,7 +31,7 @@ class SongsController < ApplicationController
   def update
 
     if @song.update(song_params)
-      redirect_to artist_song_path(@song)
+      redirect_to @artist
     else
       render :edit
     end
